@@ -199,13 +199,14 @@ class MsalHandlerImpl(private val msal: Msal) : MethodChannel.MethodCallHandler 
                 )
             }
         }
-        if (!msal.isClientInitialized()) {
-            // if authority is set, create client using it, otherwise use default
-            PublicClientApplication.createMultipleAccountPublicClientApplication(
-                msal.applicationContext,
-                R.raw.msal_default_config, msal.getApplicationCreatedListener(result)
-            )
-        }
+        // TODO This part is giving error unresolved reference raw
+        // if (!msal.isClientInitialized()) {
+        //     // if authority is set, create client using it, otherwise use default
+        //     PublicClientApplication.createMultipleAccountPublicClientApplication(
+        //         msal.applicationContext,
+        //         R.raw.msal_default_config, msal.getApplicationCreatedListener(result)
+        //     )
+        // }
     }
 
 }
